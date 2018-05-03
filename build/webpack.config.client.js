@@ -7,7 +7,7 @@
 
  const isDev = process.env.NODE_ENV === 'development'
  const devServer = {
-   port: 8000,
+   port: 8001,
    host: '0.0.0.0',
    overlay: {
      errors: true,
@@ -31,7 +31,7 @@
        rules: [{
          test: /\.styl/,
          use: [
-           'style-loader',
+           'vue-style-loader',
            'css-loader',
            {
              loader: 'postcss-loader',
@@ -61,7 +61,7 @@
        rules: [{
          test: /\.styl/,
          use: ExtractPlugin.extract({
-           fallback: 'style-loader',
+           fallback: 'vue-style-loader',
            use: [
              'css-loader',
              {
